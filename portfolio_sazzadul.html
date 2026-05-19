@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md Sazzadul Islam — Sales & Marketing Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --dark: #0D0D0D;
+    --dark2: #161616;
+    --dark3: #1E1E1E;
+    --text: #E8E2D9;
+    --muted: #888880;
+    --accent: #2A5C8A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(13,13,13,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: 'S';
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 28vw;
+    font-weight: 900;
+    color: rgba(201,168,76,0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-content {
+    max-width: 700px;
+    animation: fadeUp 1s ease both;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 0.3rem 0.9rem;
+    margin-bottom: 2rem;
+    animation: fadeUp 1s 0.1s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero h1 span { color: var(--gold); }
+
+  .hero-sub {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 0.85rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    padding: 0.85rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid rgba(232,226,217,0.3);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.3s, color 0.3s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--dark3);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-item { text-align: center; }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(201,168,76,0.2);
+  }
+
+  /* EXPERIENCE */
+  .exp-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .exp-card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgba(232,226,217,0.08);
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .exp-card:hover { background: rgba(201,168,76,0.03); }
+
+  .exp-date {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    padding-top: 0.3rem;
+  }
+
+  .exp-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    background: rgba(201,168,76,0.15);
+    color: var(--gold);
+    padding: 0.2rem 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+
+  .exp-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .exp-company {
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .exp-desc {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+
+  .exp-tasks {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .exp-task {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.83rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .exp-task::before {
+    content: '→';
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 0.05em;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    background: var(--dark3);
+    border: 1px solid rgba(201,168,76,0.1);
+    padding: 2rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .skill-card:hover {
+    border-color: rgba(201,168,76,0.4);
+    transform: translateY(-4px);
+  }
+
+  .skill-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* EDUCATION */
+  .edu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .edu-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .edu-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(201,168,76,0.3);
+    min-width: 70px;
+    text-align: right;
+  }
+
+  .edu-info {
+    background: var(--dark3);
+    border-left: 2px solid var(--gold);
+    padding: 1.2rem 1.5rem;
+  }
+
+  .edu-degree {
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+  }
+
+  .edu-institute {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .edu-result {
+    font-size: 0.78rem;
+    color: var(--gold);
+    margin-top: 0.3rem;
+  }
+
+  /* LANGUAGES */
+  .lang-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .lang-card {
+    flex: 1;
+    min-width: 150px;
+    background: var(--dark3);
+    padding: 1.5rem;
+    border: 1px solid rgba(232,226,217,0.06);
+    text-align: center;
+  }
+
+  .lang-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .lang-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .lang-bar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  .lang-dots {
+    display: flex;
+    gap: 3px;
+  }
+
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.2);
+  }
+
+  .dot.filled { background: var(--gold); }
+
+  /* CONTACT */
+  .contact-wrapper {
+    background: var(--dark3);
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .contact-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .contact-sub {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    justify-content: center;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-item-icon {
+    width: 38px; height: 38px;
+    background: rgba(201,168,76,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  .contact-item-text {
+    font-size: 0.85rem;
+    color: var(--text);
+  }
+
+  .contact-item-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.1rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark2);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  footer span { color: var(--gold); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 0 1.5rem; padding-top: 80px; }
+    section { padding: 4rem 1.5rem; }
+    .stats-bar { gap: 2rem; padding: 1.5rem; }
+    .exp-card { grid-template-columns: 1fr; gap: 0.5rem; }
+    .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+    .edu-card { grid-template-columns: 1fr; }
+    .edu-year { text-align: left; font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Sazzadul Islam</div>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="max-width:100%; padding-top: 80px;">
+  <div class="hero-content">
+    <div class="hero-tag">Sales & Marketing Professional</div>
+    <h1>Md <span>Sazzadul</span><br>Islam</h1>
+    <p class="hero-sub">
+      Corporate Sales & Marketing specialist with 6+ years of experience in IT/Telecom sector. Currently serving as Assistant Manager at Agni Systems Limited, Dhaka.
+    </p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Get In Touch</a>
+      <a href="#experience" class="btn-outline">View Experience</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">6+</span>
+    <span class="stat-label">Years Experience</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">2</span>
+    <span class="stat-label">Companies</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">ISP</span>
+    <span class="stat-label">Preferred Industry</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">B+</span>
+    <span class="stat-label">Blood Group</span>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="exp-grid">
+
+    <div class="exp-card reveal">
+      <div>
+        <div class="exp-date">Apr 2023 — Present</div>
+        <div class="exp-badge">Current</div>
+      </div>
+      <div>
+        <div class="exp-role">Assistant Manager</div>
+        <div class="exp-company">Agni Systems Limited · Gulshan, Dhaka</div>
+        <div class="exp-desc">Leading Corporate Sales & Marketing operations for one of Bangladesh's premier IT companies.</div>
+        <div class="exp-tasks">
+          <div class="exp-task">Corporate Sales & Marketing strategy and execution</div>
+          <div class="exp-task">Team leadership and performance management</div>
+          <div class="exp-task">Key account management and client retention</div>
+          <div class="exp-task">Market research and business development</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card reveal">
+      <div>
+        <div class="exp-date">Oct 2019 — Apr 2023</div>
+        <div class="exp-badge">3.5 Years</div>
+      </div>
+      <div>
+        <div class="exp-role">Executive</div>
+        <div class="exp-company">X-Press Technologies Limited · Gulshan-1, Dhaka</div>
+        <div class="exp-desc">Drove aggressive B2B sales of ISP and corporate connectivity solutions.</div>
+        <div class="exp-tasks">
+          <div class="exp-task">Generated high-value leads and converted prospects into long-term clients</div>
+          <div class="exp-task">Conducted strategic client meetings, site visits, and solution-based presentations</div>
+          <div class="exp-task">Negotiated pricing, closed deals, and expanded customer portfolios</div>
+          <div class="exp-task">Coordinated with technical teams for rapid service delivery and client retention</div>
+          <div class="exp-task">Upsold bandwidth upgrades and value-added services</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background: var(--dark2); max-width:100%; padding-left: calc(50vw - 550px + 3rem); padding-right: calc(50vw - 550px + 3rem);">
+  <div style="max-width:1100px; margin: 0 auto;">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Core Skills</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name">Marketing Strategy</div>
+        <div class="skill-desc">Developing and executing comprehensive marketing plans aligned with business goals and market dynamics.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🔍</div>
+        <div class="skill-name">Market Research</div>
+        <div class="skill-desc">Analyzing market trends, customer behavior, and competitive landscapes to drive data-informed decisions.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">💻</div>
+        <div class="skill-name">Online Marketing</div>
+        <div class="skill-desc">Leveraging digital platforms and tools to reach target audiences and generate qualified leads.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">📣</div>
+        <div class="skill-name">Product Promotion</div>
+        <div class="skill-desc">Designing and executing product and service promotion campaigns that drive measurable results.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🤝</div>
+        <div class="skill-name">Customer Relationship</div>
+        <div class="skill-desc">Building and maintaining strong client relationships through excellent communication and follow-through.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🗂️</div>
+        <div class="skill-name">Microsoft Office</div>
+        <div class="skill-desc">Proficient in Word, Excel, PowerPoint and Access for business reporting and presentations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Education</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-year">2023</div>
+      <div class="edu-info">
+        <div class="edu-degree">Bachelor of Arts (BA) — Arts</div>
+        <div class="edu-institute">Govt. Bangabandhu University & College</div>
+        <div class="edu-result">GPA: 2.52 / 4.00</div>
+      </div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-year">2015</div>
+      <div class="edu-info">
+        <div class="edu-degree">HSC — Business Studies</div>
+        <div class="edu-institute">Kazi Jahirul Hoq College</div>
+        <div class="edu-result">GPA: 2.75 / 5.00</div>
+      </div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-year">2013</div>
+      <div class="edu-info">
+        <div class="edu-degree">SSC — Business Studies</div>
+        <div class="edu-institute">Khondker Shamsuddin Smrity High School</div>
+        <div class="edu-result">GPA: 3.94 / 5.00</div>
+      </div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-year">2019</div>
+      <div class="edu-info">
+        <div class="edu-degree">Microsoft Office Certification</div>
+        <div class="edu-institute">Apon Computer Training Institute, Mohakhali, Dhaka</div>
+        <div class="edu-result">Duration: 6 Months · MS Word, Excel, PowerPoint, Access</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section style="padding-top: 0; max-width: 1100px; margin: 0 auto; padding: 0 3rem 6rem;">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Languages</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="lang-grid">
+    <div class="lang-card reveal">
+      <div class="lang-name">Bangla</div>
+      <div class="lang-bars">
+        <div class="lang-bar-row">
+          <span>Reading</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+        <div class="lang-bar-row">
+          <span>Writing</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+        <div class="lang-bar-row">
+          <span>Speaking</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lang-card reveal">
+      <div class="lang-name">English</div>
+      <div class="lang-bars">
+        <div class="lang-bar-row">
+          <span>Reading</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+        <div class="lang-bar-row">
+          <span>Writing</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+        <div class="lang-bar-row">
+          <span>Speaking</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lang-card reveal">
+      <div class="lang-name">Hindi</div>
+      <div class="lang-bars">
+        <div class="lang-bar-row">
+          <span>Reading</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+        <div class="lang-bar-row">
+          <span>Writing</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+        <div class="lang-bar-row">
+          <span>Speaking</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background: var(--dark2); max-width:100%; padding: 6rem calc(50vw - 550px + 3rem);">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-header reveal">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-wrapper reveal">
+      <div>
+        <div class="contact-headline">Let's Work<br><span style="color:var(--gold)">Together</span></div>
+        <p class="contact-sub">
+          Looking for mid-level opportunities in IT, Telecommunication, and Sales & Marketing sectors across Bangladesh.
+        </p>
+        <br>
+        <a href="mailto:siz.sazzad@gmail.com" class="btn-primary">Send Email</a>
+      </div>
+
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-text">siz.sazzad@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📱</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-text">01315466846 / 01765913804</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-text">Merul Badda, Dhaka, Bangladesh</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">💼</div>
+          <div>
+            <div class="contact-item-label">LinkedIn</div>
+            <div class="contact-item-text">linkedin.com/in/sizsazzad07</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Md Sazzadul Islam</span> · All Rights Reserved</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
